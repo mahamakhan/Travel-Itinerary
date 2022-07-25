@@ -28,9 +28,7 @@ Pick and add places to visit
 
 ---
 
-### **_How to get started_**
-Home page with navigation. 2 other pages with list and a form to add or delete places.
-
+### **_Credits_**
 
 ---
 
