@@ -34,12 +34,12 @@ Pick and add places to visit
 
 ### **_Post MVP_**
 
-1. 
-2.
+1. Add pictures
+2.Edit dates
 
 ### **Screenshots**
 
-![Image]()
+![Image](CHD.png)
 ![Image]()
 
 ---
