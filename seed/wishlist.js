@@ -6,21 +6,21 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const wishlist = async () => {
   const wishlists = [
     {
-        name:'Almizan' ,
-        country: Pakistan,
-        _id:ObjectId("3e399709171f6188450e43d2")
+        name:'Work' ,
+        
+        
       
        
        
     },
     {
-        name: 'Imran',
-        country: 'China',
-        _id:ObjectId("868769m463j46g3kj6g2k539879")
+        name: 'Leisure',
+       
+        
     }
   ]
 
-  await Publisher.insertMany(wishlists)
+  await Wishlist.insertMany(wishlists)
   console.log('Created wishlist!')
 }
 const run = async () => {

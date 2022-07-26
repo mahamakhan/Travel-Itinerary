@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 
 const Destinations = new Schema(
     {
-        name: { type: String, required: true },
+        
         city: { type: String, required: true },
         country: { type: String, required: true },
         departure: {type: String, required: false },
@@ -17,4 +17,4 @@ const Destinations = new Schema(
     { timestamps: true },
 )
 
-module.exports = mongoose.model('Destinations', Destinations)
+module.exports = Destinations
