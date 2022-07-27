@@ -26,32 +26,32 @@ const { Wishlist, Destinations } = require('../models');
     }
 }
 
-//  const createPost = async (req, res) => {
-//     const { city, country,departure,return,people,images, wishlist_id } = req.body;
+ const createPost = async (req, res) => {
+    const { city, country,departure,returndate,people,images, wishlist_id } = req.body;
 
-//     const newDestinations = newDestinations({ title, message, selectedFile, creator, tags })
+    const newDestinations = new Destinations({  city, country,departure,returndate,people,images, wishlist_id })
 
-//     try {
-//         await newDestinations.save();
+    try {
+        await newDestinations.save();
 
-//         res.status(201).json(newDestinations );
-//     } catch (error) {
-//         res.status(409).json({ message: error.message });
-//     }
-// }
+        res.status(201).json(newDestinations );
+    } catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}
 
-//  const updatePost = async (req, res) => {
-//     const { id } = req.params;
-//     const { title, message, creator, selectedFile, tags } = req.body;
+ const updatePost = async (req, res) => {
+    const { id } = req.params;
+    const { title, message, creator, selectedFile, tags } = req.body;
     
-//     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-//     const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
+    const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
 
-//     awaitDestinations.findByIdAndUpdate(id, updatedPost, { new: true });
+    awaitDestinations.findByIdAndUpdate(id, updatedPost, { new: true });
 
-//     res.json(updatedPost);
-// }
+    res.json(updatedPost);
+}
 
 //  const deletePost = async (req, res) => {
 //     const { id } = req.params;
@@ -67,6 +67,8 @@ const { Wishlist, Destinations } = require('../models');
 
 module.exports = {
   getPosts,
-  getPost
+  getPost,
+  createPost,
+  updatePost
 
 }
