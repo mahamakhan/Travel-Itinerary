@@ -4,7 +4,8 @@ import './App.css';
 import  Destinations from './components/Destinations';
 import  Home from './components/Home';
 import  Wishlist from './components/Wishlist';
-import  Nav from './components/Nav';
+// import axios from 'axios'
+import Navbar from './components/Nav';
 // import { Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -13,7 +14,9 @@ function App() {
       {/* <Route path="/" element={ <Home /> } />
       <Route path="Destinations" element={ <Destinations/>}/>
       <Route path="Wishlist" element={ <Wishlist/>}/> */}
+      <Navbar/>
       <Home/>
+      
     </div>
   );
 }

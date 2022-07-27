@@ -10,7 +10,7 @@ const Navbar= ()=> {
         <h1>travel</h1>
         {/* <Link to="/">Home</Link>
         <Link to="destinations">Destinations</Link>  
-        <Link to="wishlist">Wishlist</Link>   */}
+        <Link to="wishlist">Wishlist</Link>  */}
         </div>
     </nav>
     )
