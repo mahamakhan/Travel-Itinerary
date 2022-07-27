@@ -1,14 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import './App.css';
-import { Destinations, Wishlist, Home } from './Components';
-import { Routes, Route } from 'react-router-dom'
+import  Destinations from './components/Destinations';
+import  Home from './components/Home';
+import  Wishlist from './components/Wishlist';
+import  Nav from './components/Nav';
+// import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      <Destinations/>
+      {/* <Route path="/" element={ <Home /> } />
+      <Route path="Destinations" element={ <Destinations/>}/>
+      <Route path="Wishlist" element={ <Wishlist/>}/> */}
       <Home/>
-      <Wishlist/>
     </div>
   );
 }
