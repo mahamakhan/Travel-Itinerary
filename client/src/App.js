@@ -11,9 +11,9 @@ import { Routes, Route } from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-      <Route path="/" element={ <Home /> } />
+      {/* <Route path="/" element={ <Home /> } />
       <Route path="/destinations" element={ <Destinations/>}/>
-      <Route path="/wishlist" element={ <Wishlist/>}/>
+      <Route path="/wishlist" element={ <Wishlist/>}/> */}
       <Navbar/>
       <Home/>
       
