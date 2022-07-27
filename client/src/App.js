@@ -6,14 +6,14 @@ import  Home from './components/Home';
 import  Wishlist from './components/Wishlist';
 // import axios from 'axios'
 import Navbar from './components/Nav';
-// import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      {/* <Route path="/" element={ <Home /> } />
-      <Route path="Destinations" element={ <Destinations/>}/>
-      <Route path="Wishlist" element={ <Wishlist/>}/> */}
+      <Route path="/" element={ <Home /> } />
+      <Route path="/destinations" element={ <Destinations/>}/>
+      <Route path="/wishlist" element={ <Wishlist/>}/>
       <Navbar/>
       <Home/>
       
