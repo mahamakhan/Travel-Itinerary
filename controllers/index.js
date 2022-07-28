@@ -1,5 +1,4 @@
 
-
 const { Wishlist, Destinations } = require('../models');
 
 
@@ -44,24 +43,24 @@ const { Wishlist, Destinations } = require('../models');
     const { id } = req.params;
     const { title, message, creator, selectedFile, tags } = req.body;
     
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    // if (!ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
     const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
 
-    awaitDestinations.findByIdAndUpdate(id, updatedPost, { new: true });
+    await Destinations.findByIdAndUpdate(id, updatedPost, { new: true });
 
     res.json(updatedPost);
 }
 
-//  const deletePost = async (req, res) => {
-//     const { id } = req.params;
+ const deletePost = async (req, res) => {
+    const { id } = req.params;
 
-//     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    // if (!ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-//     awaitDestinations.findByIdAndRemove(id);
+    await Destinations.findByIdAndRemove(id);
 
-//     res.json({ message: "Post deleted successfully." });
-// }
+    res.json({ message: "Post deleted successfully." });
+}
 
 
 
@@ -69,6 +68,7 @@ module.exports = {
   getPosts,
   getPost,
   createPost,
-  updatePost
+  updatePost,
+  deletePost
 
 }
