@@ -53,7 +53,9 @@ console.log(props.destinations)
           <h3>City: { issue.city}</h3>
           <p>Country: { issue.country }</p>
           <p>People: { issue.people }</p>
+          <p>Departure: {issue.departure}</p>
           <img src='{issue.image}'/>
+          <button>Delete</button>
           </div>
       ))}
       

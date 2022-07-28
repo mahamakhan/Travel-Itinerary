@@ -8,8 +8,8 @@ const Destinations = new Schema(
         
         city: { type: String, required: true },
         country: { type: String, required: true },
-        departure: {type: Date, required: true },
-        returndate: {type: Date, required: true },
+        departure: {type: Date, required: true, format: Date },
+        returndate: {type: Date, required: true, format: Date },
         people: { type: Number, required: true },
         image: { type: String, required: false },
         wishlist_id: { type: Schema.Types.ObjectId, ref: 'wishlist_id' }

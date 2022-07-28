@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { Link } from 'react-router-dom'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const Wishlist= (props)=> {
@@ -12,7 +12,7 @@ const Wishlist= (props)=> {
      people: ''
 
     }
-    // let navigate = useNavigate()
+    let navigate = useNavigate()
     const [formState, setFormState] = useState(initialState)
  
     const handleChange = event => {
@@ -24,7 +24,7 @@ const Wishlist= (props)=> {
    
         let res = await axios.post('http://localhost:3001/api/wishlist', formState)
         console.log(res)
-        // navigate('/destinations')
+        navigate('/destinations')
         setFormState(initialState);
       };
 
