@@ -1,7 +1,9 @@
 import axios from 'axios'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
+
+
 const Wishlist= (props)=> {
 
     const initialState = {
@@ -10,19 +12,24 @@ const Wishlist= (props)=> {
      people: ''
 
     }
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
     const [formState, setFormState] = useState(initialState)
+ 
     const handleChange = event => {
         setFormState({ ...formState, [event.target.id]: event.target.value });
       };
       
       const handleSubmit = async (event) => {
-        event.preventDefault();
+       
+   
         let res = await axios.post('http://localhost:3001/api/wishlist', formState)
         console.log(res)
-        navigate('/listings')
+        // navigate('/destinations')
         setFormState(initialState);
       };
+
+
+
     return(
 
         <div>
@@ -42,12 +49,12 @@ const Wishlist= (props)=> {
     <label htmlFor="returndate">Return date:</label>
     <input id="return" type="date" onChange={handleChange}/>
     <label htmlFor="people">Number of people:</label>
-    <input id="dpeople" type= "number" onChange={handleChange}/>
-    <button type="submit">Enter</button>
+    <input id="people" type= "number" onChange={handleChange}/>
+    <button type="submit"  onClick={handleSubmit} >Enter</button>
     <button><Link to="/destinations">Destinations</Link></button>
       
     </form>
-            
+   
         </div>
     )
 }

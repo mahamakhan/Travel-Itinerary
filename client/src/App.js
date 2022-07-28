@@ -1,9 +1,6 @@
 import React from 'react';
 // import ReactDOM from 'react-dom/client';
 import './App.css';
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-
 import  Destinations from './components/Destinations';
 import  Home from './components/Home';
 import  Wishlist from './components/Wishlist';
@@ -15,10 +12,6 @@ import { Routes, Route } from 'react-router-dom'
 
 const App= ()=> {
   
-
-
-
-
 
 
 

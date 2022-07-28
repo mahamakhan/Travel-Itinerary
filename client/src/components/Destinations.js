@@ -1,42 +1,62 @@
-import axios from 'axios'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
+// import DestinationsDetails from './DesDetails'
+// import DestinationsList from './Deslist'
+
 
 const BASE_URL = 'http://localhost:3001/api'
 const Destinations= (props)=> {
-
-  const [destination, setDestination] = useState([])
-  // const [selectedMovie, setSelectedMovie] = useState(null)
-
-
-
-// change console.log
-
+  //   const [destinations, setDestination] = useState([])
+  //   const [selectedDestinations, setSelectedDestinations] = useState(null)
+  
+  //   useEffect(() => {
+  //     async function getDestinations() {
+  //       const res = await axios.get(BASE_URL)
+  //       setDestination(res.data.results)
+  //     }
+  //     getDestinations()
+  //   }, [])
+  
+  //   const getDestinations = (destinationsId) => {
+  //     console.log(destinationsId)
+  //     setSelectedDestinations(destinationsId)
+  //   }
+  
+  // let component 
+  
+  //   if (selectedDestinations) {
+  //     component = <DestinationsDetails selectedDestinations={ selectedDestinations } />
+  //   } else {
+  //     component = <DestinationsList destinations={destinations} getDestinations={ getDestinations } />
+  //   }
+    
+  const [issues, setIssues] = useState([])
   useEffect(() => {
-    async function getDestinations() {
-      const res = await axios.get(BASE_URL)
-      setDestination(res.data.results)
+    const getIssues = async () => {
+      try {
+        let res = await axios.get(BASE_URL)
+        setIssues(res.data)
+      } catch(err) {
+        console.log(err)
+      }
     }
-    getDestinations()
+    getIssues()
   }, [])
-
 console.log(props.destinations)
     return(
 
         <div className='grid'>
             <h1> Destinations</h1>
             
-        {/* {
-            props.destinations.map((destinations) => (
-            <div key={destinations.id} className="card">
-             <img src={`${image}`} alt="poster" />
-            <h3>{destinations.country}</h3>
-            <h2>{destinations.city}</h2>
-             <button>Delete</button>
-
-            </div>
-            ))
-        } */}
-
+      { issues.map((issue) => (
+        <div key={ issue._id }>
+          <h3>City: { issue.city}</h3>
+          <p>Country: { issue.country }</p>
+          <p>People: { issue.people }</p>
+          <img src='{issue.image}'/>
+          </div>
+      ))}
+      
         </div>
     )
 }
