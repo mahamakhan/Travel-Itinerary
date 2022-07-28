@@ -44,7 +44,7 @@ const App= ()=> {
       </header>
       <main>
       <Routes>
-      <Route path="/api" element={ <Home/> } />
+      <Route path="/" element={ <Home/> } />
       <Route path="/destinations" element={ <Destinations/>}/>
       <Route path="/wishlist" element={ <Wishlist/>}/>
       </Routes>

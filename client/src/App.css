@@ -14,8 +14,36 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+ 
+}
+.navbar {
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: rgb(31, 57, 129);
+  padding: 1em;
+  min-height: 2em;
+  font-family: 'Georgia';
+  margin-top: 40px;
 }
 
+form {
+ 
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40em;
+  margin: 4em auto;
+  border-radius: 0.25em;
+}
+
+form input label{
+  display: block;
+  margin : 30px;
+
+}
 
 
 .grid {
