@@ -5,7 +5,8 @@ console.log(props.destinations)
     return(
 
         <div className='grid'>
-        {
+            <h1> Destinations</h1>
+        {/* {
             props.destinations.map((destinations) => (
             <div key={destinations.id} className="card">
              <img src={`${image}`} alt="poster" />
@@ -14,7 +15,7 @@ console.log(props.destinations)
              <button>View destination</button>
             </div>
             ))
-        }
+        } */}
 
 
         </div>

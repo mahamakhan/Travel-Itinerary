@@ -1,6 +1,6 @@
 import React from 'react';
-import { useEffect } from 'react'; 
-import axios from 'axios'
+// import { useEffect } from 'react'; 
+// import axios from 'axios'
  
 // import ReactDOM from 'react-dom/client';
 import './App.css';
@@ -13,20 +13,20 @@ import Navbar from './components/Nav';
 import { Routes, Route } from 'react-router-dom'
 
 const App= ()=> {
-  const [destination, setDestination] = useState([])
-  // const [selectedMovie, setSelectedMovie] = useState(null)
+//   const [destination, setDestination] = useState([])
+//   // const [selectedMovie, setSelectedMovie] = useState(null)
 
-const BASE_URL = 'http://localhost:3001/api'
+// const BASE_URL = 'http://localhost:3001/api'
 
-// change console.log
+// // change console.log
 
-  useEffect(() => {
-    async function getDestinations() {
-      const res = await axios.get(BASE_URL)
-      console.log(res)
-    }
-    getDestinations()
-  }, [])
+//   useEffect(() => {
+//     async function getDestinations() {
+//       const res = await axios.get(BASE_URL)
+//       console.log(res)
+//     }
+//     getDestinations()
+//   }, [])
 
 
 // handleSubmit=()=>{
