@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import Wishlist from './Wishlist'
 // import DestinationsDetails from './DesDetails'
 // import DestinationsList from './Deslist'
 
@@ -43,13 +45,20 @@ const Destinations= (props)=> {
     getIssues()
   }, [])
 console.log(props.destinations)
+
+
+
+let navigate = useNavigate()
+const showDes = (destinations) => {
+  navigate(`destinations/${destinations._id}`)
+}
     return(
 
         <div className='grid'>
             <h1> Destinations</h1>
             
       { issues.map((issue) => (
-        <div key={ issue._id }>
+        <div key={ issue._id } onClick={() => showDes(Destinations)}>
           <h4>City: { issue.city}</h4>
           <h3>Country: { issue.country }</h3>
           <h3>People: { issue.people }</h3>
