@@ -49,5 +49,8 @@ Pick and add places to visit
 - [Images](https://www.google.com/?&bih=839&biw=1500&hl=en)
 - [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/)
 - [Charts](https://lucid.app/documents#/documents?folder_id=home)
-
-
+- [router](https://github.com/SEI-R-6-21/u2_lesson_react_router)
+- [API](https://github.com/SEI-R-6-21/u2_lesson_react_APIs)
+- [Form](https://github.com/SEI-R-6-21/u2_lesson_react_forms)
+- [Backend](https://github.com/SEI-R-6-21/u2_lesson_mongoose_data_model)
+- [Backend](https://github.com/SEI-R-6-21/u2_hw_mongoose_plants)
