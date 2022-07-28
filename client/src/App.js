@@ -1,36 +1,22 @@
 import React from 'react';
- import { Link } from 'react-router-dom';
-// import axios from 'axios'
- 
 // import ReactDOM from 'react-dom/client';
 import './App.css';
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+
 import  Destinations from './components/Destinations';
 import  Home from './components/Home';
 import  Wishlist from './components/Wishlist';
-
-
 import Navbar from './components/Nav';
 import { Routes, Route } from 'react-router-dom'
+
 
 
 
 const App= ()=> {
   
 
-//   const [destination, setDestination] = useState([])
-//   // const [selectedMovie, setSelectedMovie] = useState(null)
 
-// const BASE_URL = 'http://localhost:3001/api'
-
-// // change console.log
-
-//   useEffect(() => {
-//     async function getDestinations() {
-//       const res = await axios.get(BASE_URL)
-//       console.log(res)
-//     }
-//     getDestinations()
-//   }, [])
 
 
 
