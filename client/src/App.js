@@ -1,5 +1,5 @@
 import React from 'react';
-// import { useEffect } from 'react'; 
+ 
 // import axios from 'axios'
  
 // import ReactDOM from 'react-dom/client';
@@ -12,7 +12,11 @@ import  Wishlist from './components/Wishlist';
 import Navbar from './components/Nav';
 import { Routes, Route } from 'react-router-dom'
 
+
+
 const App= ()=> {
+  
+
 //   const [destination, setDestination] = useState([])
 //   // const [selectedMovie, setSelectedMovie] = useState(null)
 
@@ -29,20 +33,22 @@ const App= ()=> {
 //   }, [])
 
 
-// handleSubmit=()=>{
 
-// }
 
 
   return (
     <div className="App">
+      <header>
+        <Navbar/>
+      </header>
+      <main>
       <Routes>
       <Route path="/" element={ <Home /> } />
       <Route path="/destinations" element={ <Destinations/>}/>
       <Route path="/wishlist" element={ <Wishlist/>}/>
       </Routes>
-      <Navbar/>
-      <Home/>
+      </main>
+      
       
     </div>
   );
