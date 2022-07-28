@@ -1,5 +1,5 @@
 import React from 'react';
- 
+ import { Link } from 'react-router-dom';
 // import axios from 'axios'
  
 // import ReactDOM from 'react-dom/client';
@@ -40,10 +40,11 @@ const App= ()=> {
     <div className="App">
       <header>
         <Navbar/>
+      
       </header>
       <main>
       <Routes>
-      <Route path="/" element={ <Home /> } />
+      <Route path="/api" element={ <Home/> } />
       <Route path="/destinations" element={ <Destinations/>}/>
       <Route path="/wishlist" element={ <Wishlist/>}/>
       </Routes>

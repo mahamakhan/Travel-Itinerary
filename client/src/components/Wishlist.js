@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom'
 const Wishlist= (props)=> {
 
     const initialState = {
@@ -9,7 +9,7 @@ const Wishlist= (props)=> {
      people: ''
 
     }
-
+    let navigate = useNavigate()
     const [formState, setFormState] = useState(initialState)
     const handleChange = event => {
         setFormState({ ...formState, [event.target.id]: event.target.value });
@@ -19,6 +19,7 @@ const Wishlist= (props)=> {
         event.preventDefault();
         let res = await axios.post('http://localhost:3001/api/wishlist', formState)
         console.log(res)
+        navigate('/listings')
         setFormState(initialState);
       };
     return(
