@@ -50,11 +50,11 @@ console.log(props.destinations)
             
       { issues.map((issue) => (
         <div key={ issue._id }>
-          <h3>City: { issue.city}</h3>
-          <p>Country: { issue.country }</p>
-          <p>People: { issue.people }</p>
-          <p>Departure: {issue.departure}</p>
-          <img src='{issue.image}'/>
+          <h4>City: { issue.city}</h4>
+          <h3>Country: { issue.country }</h3>
+          <h3>People: { issue.people }</h3>
+          <h3>Departure: {issue.departure}</h3>
+          <img src={issue.image} width='200px' height='140px'/>
           <button>Delete</button>
           </div>
       ))}
