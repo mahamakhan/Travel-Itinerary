@@ -32,13 +32,16 @@ const Wishlist = ()=> {
 
     return(
 
-        <div>
+        <div className='form'>
    <form onSubmit={handleSubmit}>
        <label htmlFor="city">City:</label>
     <input type="text" id="city" onChange={handleChange} value={ formState.city }/>
 
-    <label htmlFor="country">Country</label>
+    <label htmlFor="country">Country:</label>
     <input id="country" type="text" onChange={handleChange} value={ formState.country }/>
+
+    <label htmlFor="image">Image Link: </label>
+    <input id="image" type="text" onChange={handleChange} value={ formState.image }/>
 
     <label htmlFor="departure">Departure:</label>
     <input id="departure" type="date" onChange={handleChange} value={ formState.departure }/>

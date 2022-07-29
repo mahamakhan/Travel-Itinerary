@@ -34,8 +34,8 @@ const handleChange = event => {
 
 const deleteDestination= async (event) => {
   event.preventDefault();
-  await axios.delete(`http://localhost:3001/api/${id}`, formState)
-   console.log('Delete successful');
+  const res= await axios.delete(`http://localhost:3001/api/${id}`, formState)
+   console.log('Delete successful',res);
   }
   // deleteDestination();
 
@@ -48,13 +48,11 @@ const deleteDestination= async (event) => {
 
       { destinations ? destinations.map((destination) => (
         <div key={ destination._id } onChange={handleChange}>
-          <h4>City: { destination.city}</h4>
-          <h3 >Country: { destination.country }</h3>
-          <h3>People: { destination.people }</h3>
-          <h3>Departure: {destination.departure}</h3>
-          <img src={destination.image} width='200px' height='140px' alt='city'/>
+          <h2>Country: { destination.country }</h2>
           <button onClick={() => showDes(destination._id)}>Show Details</button>
           <button onClick={deleteDestination}>Delete</button>
+          <img src={destination.image} width='200px' height='140px' alt='city'/>
+          
           </div>
       )) : ""}
       </section>

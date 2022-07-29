@@ -39,9 +39,9 @@ Pick and add places to visit
 
 ### **Screenshots**
 
-![Image](CHD.png)
-![Image](erd.png)
-
+![Image](screenshot1.png)
+![Image](screenshot3.png)
+![Image](screenshot4.png)
 ---
 
 ### Sources
