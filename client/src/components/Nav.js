@@ -8,9 +8,9 @@ const Navbar= ()=> {
 <nav className='navbar'>
         <div className='nav'>
         
-        <Link to="/">   Home    </Link>
-        <Link to="/destinations">  Destinations    </Link>  
-        <Link to="/wishlist">   Wishlist</Link> 
+        <Link to="/" style={{ marginRight: 20 }}>   Home    </Link>
+        <Link to="/destinations" style={{ marginRight: 20 }}>  Destinations    </Link>  
+        <Link to="/wishlist" style={{ marginRight: 20 }}  >   Wishlist</Link> 
         </div>
     </nav>
     )

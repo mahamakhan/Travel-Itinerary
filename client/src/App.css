@@ -29,23 +29,25 @@ h1{
 
 }
 .navbar {
+  /* position: fixed; */
   justify-content: space-between;
-  align-items: right;
+  align-items: center;
   color: white;
   background-image: url('wallpaper.png');
   padding: 50px;
   min-height: 2em;
   margin-top: 40px;
   font-size: 30px;
-
+  padding: 50px 40px;
+  /* width: 100%;
+  top: 0; */
 }
 
-
-.nav{
+link{
   justify-content: space-between;
-  padding: 50px;
-  color: rgb(48, 51, 187);
+  padding-right: 40px;
   text-decoration: none;
+  color: rgb(48, 51, 187);
 }
 
 
