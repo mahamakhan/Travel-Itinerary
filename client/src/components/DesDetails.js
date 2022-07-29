@@ -19,11 +19,13 @@ const DestinationsDetail = () => {
         selectedDestination()
     }, [])
 
-    const updatedestination= async (event) => {
+    const updatedestination = async (event) => {
       event.preventDefault()
       const res =await axios.put(`http://localhost:3001/api/${id}`, formState)
       navigate('/destinations')
      }
+updatedestination()
+
 
     return destinations ? (
       <div className="desdetail">
@@ -33,10 +35,14 @@ const DestinationsDetail = () => {
            </div>
         <div >
           <div>
-            <h3>Country: {destinations.country}</h3>
+            
             <h3>City: {destinations.city}</h3>
+            <h3>Departure: {destinations.departure}</h3>
+            <h3>Return Date: {destinations.returndate}</h3>
+            <button onClick={() => updatedestination(destination._id)}>Update</button>
           </div>
-          <p>{destinations.departure}</p>
+          
+          
         </div>
       </div>
     ) : null

@@ -31,7 +31,7 @@ const showDes = (id) => {
 
 
 const deleteDestination= async () => {
-  let res= await axios.delete(`http://localhost:3001/api/${id}`, formstate)
+  await axios.delete(`http://localhost:3001/api/${id}`, formstate)
    console.log('Delete successful');
    
   }
@@ -52,7 +52,7 @@ const deleteDestination= async () => {
           <h3>Departure: {destination.departure}</h3>
           <img src={destination.image} width='200px' height='140px'/>
           <button onClick={() => showDes(destination._id)}>Show Details</button>
-          <button onClick={() => deleteDestination}>Delete</button>
+          <button onClick={() => deleteDestination(destination._id)}>Delete</button>
           </div>
       )) : ""}
       </section>
