@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom/client';
 import './App.css';
 import  Destinations from './components/Destinations';
 import  Home from './components/Home';
@@ -12,8 +11,6 @@ import DestinationsDetail from './components/DesDetails';
 
 const App= ()=> {
   
-
-
 
   return (
     <div className="App">

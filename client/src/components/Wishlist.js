@@ -17,7 +17,7 @@ const Wishlist = ()=> {
 
     const [formState, setFormState] = useState(initialState)
     
-    
+    //submit form
       const handleSubmit = async (event) => {
         event.preventDefault();
         const res = await axios.post('http://localhost:3001/api/wishlist', formState)
@@ -32,7 +32,7 @@ const Wishlist = ()=> {
 
     return(
 
-        <div className='form'>
+        <div className='form wishlist'>
    <form onSubmit={handleSubmit}>
        <label htmlFor="city">City:</label>
     <input type="text" id="city" onChange={handleChange} value={ formState.city }/>

@@ -17,7 +17,10 @@ const DestinationsDetail = () => {
       departure:"",
       returndate:''
     }
+
     const [travel, settravel] = useState(initialState)
+    
+    //get one based to its id
     useEffect(() => {
        let selectedDestination=  async () => {
             const res = await axios.get(`http://localhost:3001/api/${id}`)
@@ -28,6 +31,8 @@ const DestinationsDetail = () => {
         selectedDestination()
     }, )
 
+
+    //update function
     const handleUpdate = async (event) => {
       event.preventDefault()
       const res =await axios.put(`http://localhost:3001/api/${id}`, travel)
@@ -37,6 +42,8 @@ const DestinationsDetail = () => {
       settravel({ ...travel, [event.target.id]: event.target.value });
     };
 
+
+    //delete function
      const handleDelete= async (event) => {
       event.preventDefault();
       const res= await axios.delete(`http://localhost:3001/api/${id}`, travel)
@@ -60,9 +67,9 @@ const DestinationsDetail = () => {
             
             <button onClick={handleDelete}>Delete</button>
           </div>
-          <div className='form'>
+          
+          <div className='form update'>
           <form onSubmit={handleUpdate}>
-       
     <input type="text" id="city" onChange={handleChange} value={ travel.city } placeholder='City' />
     <input id="country" type="text" onChange={handleChange} value={ travel.country } placeholder='Country'/>
     <input id="image" type="text" onChange={handleChange} value={ travel.image } placeholder='Image'/>

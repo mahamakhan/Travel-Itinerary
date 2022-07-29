@@ -1,14 +1,22 @@
 .App {
   text-align: center;
   background-image: url('https://theithacan.org/wp-content/uploads/2015/03/10-Common-Travel-Mistakes-You-Can-Avoid.jpg');
-color: white;
+background-attachment: fixed;
 }
-
+.home{
+  color: white;
+}
+.alldestinations, .wishlist{
+  color: #1e578b;
+}
 .heading{
   margin-top: 500px;
   font-size: 101px;
+  
 }
-
+h1{
+  font-size: 80px;
+}
 .App-header {
   background-color: #2888e2;
   min-height: 100vh;
@@ -18,21 +26,22 @@ color: white;
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
- 
+
 }
 .navbar {
   justify-content: space-between;
-  align-items: center;
+  align-items: right;
   color: white;
-  background-color: rgb(41, 165, 236);
-  padding: 1em;
+  background-image: url('wallpaper.png');
+  padding: 50px;
   min-height: 2em;
-  font-family: 'Georgia';
   margin-top: 40px;
-  font-size: 20px;
+  font-size: 30px;
+
 }
 link{
   justify-content: space-between;
+  padding: 50px;
 }
 .form {
   padding: 1em;
@@ -55,10 +64,18 @@ form input {
 }
 
 button {
-background-color: rgb(86, 187, 255);
+background-color: rgb(146, 210, 253);
 border-radius: 30px;
-border: rgb(168, 219, 248) 2px solid;
+border: rgb(233, 245, 252) 2px solid;
 font-size: 20px;
+color: whitesmoke;
+}
+.figcap{
+  font-size: 30px;
+  color: #2888e2;
+}
+.alldesimg{
+ border-radius: 40%;
 }
 .grid {
   display: grid;
