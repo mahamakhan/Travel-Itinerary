@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-import Wishlist from './Wishlist'
+// import Wishlist from './Wishlist'
 // import DestinationsDetails from './DesDetails'
 // import DestinationsList from './Deslist'
 
@@ -10,7 +10,7 @@ import Wishlist from './Wishlist'
 const BASE_URL = 'http://localhost:3001/api'
 const Destinations= (props)=> {
   let {id}= useParams()
-    
+  const [formState, setFormState] = useState([])
   const [destinations, setdestinations] = useState([])
   useEffect(() => {
     const getdestinations = async () => {
@@ -28,12 +28,14 @@ let navigate = useNavigate()
 const showDes = (id) => {
   navigate(`${id}`)
 }
+const handleChange = event => {
+  setFormState({ ...formState, [event.target.id]: event.target.value });
+};
 
-
-const deleteDestination= async () => {
-  await axios.delete(`http://localhost:3001/api/${id}`, formstate)
+const deleteDestination= async (event) => {
+  event.preventDefault();
+  await axios.delete(`http://localhost:3001/api/${id}`, formState)
    console.log('Delete successful');
-   
   }
   // deleteDestination();
 
@@ -45,14 +47,14 @@ const deleteDestination= async () => {
             <section className="grid"> 
 
       { destinations ? destinations.map((destination) => (
-        <div key={ destination._id } >
+        <div key={ destination._id } onChange={handleChange}>
           <h4>City: { destination.city}</h4>
           <h3 >Country: { destination.country }</h3>
           <h3>People: { destination.people }</h3>
           <h3>Departure: {destination.departure}</h3>
-          <img src={destination.image} width='200px' height='140px'/>
+          <img src={destination.image} width='200px' height='140px' alt='city'/>
           <button onClick={() => showDes(destination._id)}>Show Details</button>
-          <button onClick={() => deleteDestination(destination._id)}>Delete</button>
+          <button onClick={deleteDestination}>Delete</button>
           </div>
       )) : ""}
       </section>

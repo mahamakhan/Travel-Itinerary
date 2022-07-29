@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 
 
 const DestinationsDetail = () => {
     const [destinations, setDestinationsDetails] = useState({})
     let {id}= useParams()
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
 
     useEffect(() => {
        let selectedDestination=  async () => {
@@ -22,7 +22,8 @@ const DestinationsDetail = () => {
     const updatedestination = async (event) => {
       event.preventDefault()
       const res =await axios.put(`http://localhost:3001/api/${id}`, formState)
-      navigate('/destinations')
+      console.log(res)
+      navigate('/wishlist')
      }
 updatedestination()
 
@@ -39,7 +40,7 @@ updatedestination()
             <h3>City: {destinations.city}</h3>
             <h3>Departure: {destinations.departure}</h3>
             <h3>Return Date: {destinations.returndate}</h3>
-            <button onClick={() => updatedestination(destination._id)}>Update</button>
+            <button onClick={updatedestination}>Update</button>
           </div>
           
           
