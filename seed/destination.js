@@ -11,7 +11,7 @@ const addDestination = async () => {
         city: 'Paris',
         country: 'France' ,
         departure: "10/09/2019",
-        returndate: "10/20/2019" ,
+        returndate: "10/20/2019",
         people: 5,
         image: 'https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900',
         wishlist_id: wishlists[0]._id

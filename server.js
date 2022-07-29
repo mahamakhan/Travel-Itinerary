@@ -12,16 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use(logger('dev'));
 app.use('/api', routes);
-
-
 app.get('/', (req, res) => {
   res.send('Root route!');
 });
-
-
-
-
-
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })

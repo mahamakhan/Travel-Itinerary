@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-// import Wishlist from './Wishlist'
+import Wishlist from './Wishlist'
 // import DestinationsDetails from './DesDetails'
 // import DestinationsList from './Deslist'
 
@@ -14,15 +14,12 @@ const Destinations= (props)=> {
   const [destinations, setdestinations] = useState([])
   useEffect(() => {
     const getdestinations = async () => {
-      try {
         let res = await axios.get(BASE_URL)
         setdestinations(res.data)
-      } catch(err) {
-        console.log(err)
       }
-    }
     getdestinations()
   }, [])
+
 console.log(props)
 
 
@@ -33,11 +30,12 @@ const showDes = (id) => {
 }
 
 
-  async function deleteDestination() {
-    await axios.delete(`http://localhost:3001/api/${id}`);
-    console.log('Delete successful');
+const deleteDestination= async () => {
+  let res= await axios.delete(`http://localhost:3001/api/${id}`, formstate)
+   console.log('Delete successful');
+   
   }
-  deleteDestination();
+  // deleteDestination();
 
 
     return(
