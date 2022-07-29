@@ -4,29 +4,36 @@ import { useParams } from 'react-router-dom'
 
 
 
-const DestinationsDetails = () => {
-    const [destinationsDetails, setDestinationsDetails] = useState({})
+
+const DestinationsDetail = () => {
+    const [destinations, setDestinationsDetails] = useState({})
     let {id}= useParams()
 
 
     useEffect(() => {
        let selectedDestination=  async () => {
-            const res = await axios.get(`http://localhost:3001/api${id}`)
+            const res = await axios.get(`http://localhost:3001/api/${id}`)
             setDestinationsDetails(res.data)
             console.log(res)
         }
         selectedDestination()
     }, [])
 
-    return destinationsDetails ? (
-        <div className="detail" key={ destination._id }>
-            <h4>City: { destination.city}</h4>
-          <h3>Country: { destination.country }</h3>
-          <h3>People: { destination.people }</h3>
-          <h3>Departure: {destination.departure}</h3>
-          <img src={destination.image} width='200px' height='140px' alt='city picture'/>
+    return destinations ? (
+      <div className="desdetail">
+        <div>
+          <img src={destinations.image} alt={destinations.city} />
+            <h1>{destinations.country}</h1>
+           </div>
+        <div >
+          <div>
+            <h3>Country: {destinations.country}</h3>
+            <h3>City: {destinations.city}</h3>
+          </div>
+          <p>{destinations.departure}</p>
         </div>
-      ) : null;
-    }
+      </div>
+    ) : null
+  }
 
-export default DestinationsDetails
+export default DestinationsDetail

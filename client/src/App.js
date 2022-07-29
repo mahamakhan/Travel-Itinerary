@@ -6,7 +6,7 @@ import  Home from './components/Home';
 import  Wishlist from './components/Wishlist';
 import Navbar from './components/Nav';
 import { Routes, Route } from 'react-router-dom'
-
+import DestinationsDetail from './components/DesDetails';
 
 
 
@@ -25,6 +25,7 @@ const App= ()=> {
       <Routes>
       <Route path="/" element={ <Home/> } />
       <Route path="/destinations" element={ <Destinations/>}/>
+      <Route path="/destinations/:id" element={<DestinationsDetail/>}/>
       <Route path="/wishlist" element={ <Wishlist/>}/>
       </Routes>
       </main>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 
-const Wishlist= (props)=> {
+const Wishlist = ()=> {
 
     const initialState = {
       city: '',
@@ -13,12 +13,9 @@ const Wishlist= (props)=> {
       departure:"",
       returndate:''
     }
-    let navigate = useNavigate()
     const [formState, setFormState] = useState(initialState)
- 
-    const handleChange = event => {
-        setFormState({ ...formState, [event.target.id]: event.target.value });
-      };
+    let navigate = useNavigate()
+    
       
       const handleSubmit = async (event) => {
         event.preventDefault();
@@ -28,7 +25,9 @@ const Wishlist= (props)=> {
         setFormState(initialState);
       };
 
-
+      const handleChange = event => {
+        setFormState({ ...formState, [event.target.id]: event.target.value });
+      };
 
     return(
 
@@ -50,7 +49,7 @@ const Wishlist= (props)=> {
     <input id="return" type="date" onChange={handleChange} value={ formState.returndate }/>
     <label htmlFor="people">Number of people:</label>
     <input id="people" type= "number" onChange={handleChange} value={ formState.people }/>
-    <button type="submit"  onClick={handleSubmit} >Enter</button>
+    <button type="submit" >Enter</button>
     <button><Link to="/destinations">Destinations</Link></button>
       
     </form>
