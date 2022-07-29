@@ -54,7 +54,7 @@ const DestinationsDetail = () => {
     return destinations ? (
       <div className="desdetail">
         <div>
-          <img src={destinations.image} alt={destinations.city} />
+          <img src={destinations.image} alt={destinations.city} width='1000px' height='614px'/>
             <h1>{destinations.country}</h1>
            </div>
         <div >

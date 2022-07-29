@@ -39,10 +39,16 @@ h1{
   font-size: 30px;
 
 }
-link{
+
+
+.nav{
   justify-content: space-between;
   padding: 50px;
+  color: rgb(48, 51, 187);
+  text-decoration: none;
 }
+
+
 .form {
   padding: 1em;
   display: flex;
@@ -60,7 +66,7 @@ form input {
   margin : 30px;
   background: none;
   font-size: 20px;
-
+  color: #1e578b;
 }
 
 button {
