@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 const DestinationsDetail = () => {
     const [destinations, setDestinationsDetails] = useState({})
+    const [formState, setFormState] = useState([])
     let {id}= useParams()
     let navigate = useNavigate()
 
@@ -26,7 +27,12 @@ const DestinationsDetail = () => {
       navigate('/wishlist')
      }
 
-
+     const deleteDestination= async (event) => {
+      event.preventDefault();
+      const res= await axios.delete(`http://localhost:3001/api/${id}`, formState)
+       console.log('Delete successful',res);
+       navigate('/destinations')
+      }
 
     return destinations ? (
       <div className="desdetail">
@@ -42,6 +48,7 @@ const DestinationsDetail = () => {
             <h3>Return Date: {destinations.returndate}</h3>
             <h3>Number of People: {destinations.people}</h3>
             <button onClick={updatedestination}>Update</button>
+            <button onClick={deleteDestination}>Delete</button>
           </div>
           
           
