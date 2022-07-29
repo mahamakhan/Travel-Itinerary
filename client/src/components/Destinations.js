@@ -32,13 +32,12 @@ const showDes = (id) => {
   navigate(`${id}`)
 }
 
-useEffect(()=>{
+
   async function deleteDestination() {
     await axios.delete(`http://localhost:3001/api/${id}`);
     console.log('Delete successful');
   }
   deleteDestination();
-}, [])
 
 
     return(

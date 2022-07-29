@@ -16,18 +16,19 @@ const Wishlist = ()=> {
     const [formState, setFormState] = useState(initialState)
     let navigate = useNavigate()
     
-      
+    const handleChange = event => {
+      setFormState({ ...formState, [event.target.id]: event.target.value });
+    };
+    
       const handleSubmit = async (event) => {
         event.preventDefault();
-        let res = await axios.post('http://localhost:3001/api/wishlist', formState)
+        const res = await axios.post('http://localhost:3001/api/wishlist', formState)
         console.log(res)
+        setFormState();
         navigate('/destinations')
-        setFormState(initialState);
       };
 
-      const handleChange = event => {
-        setFormState({ ...formState, [event.target.id]: event.target.value });
-      };
+     
 
     return(
 
