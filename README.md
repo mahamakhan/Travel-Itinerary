@@ -54,3 +54,4 @@ Pick and add places to visit
 - [Form](https://github.com/SEI-R-6-21/u2_lesson_react_forms)
 - [Backend](https://github.com/SEI-R-6-21/u2_lesson_mongoose_data_model)
 - [Backend](https://github.com/SEI-R-6-21/u2_hw_mongoose_plants)
+- [CRUD](https://jasonwatmore.com/post/2021/04/23/react-axios-http-delete-request-examples)

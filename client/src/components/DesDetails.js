@@ -7,29 +7,39 @@ import { useNavigate } from 'react-router-dom'
 
 const DestinationsDetail = () => {
     const [destinations, setDestinationsDetails] = useState({})
-    const [formState, setFormState] = useState([])
+    
     let {id}= useParams()
     let navigate = useNavigate()
-
+    const initialState = {
+      city: '',
+     country: '',
+     people: '',
+      departure:"",
+      returndate:''
+    }
+    const [travel, settravel] = useState(initialState)
     useEffect(() => {
        let selectedDestination=  async () => {
             const res = await axios.get(`http://localhost:3001/api/${id}`)
             setDestinationsDetails(res.data)
             console.log(res)
+            
         }
         selectedDestination()
-    }, [])
+    }, )
 
-    const updatedestination = async (event) => {
+    const handleUpdate = async (event) => {
       event.preventDefault()
-      const res =await axios.put(`http://localhost:3001/api/${id}`, formState)
+      const res =await axios.put(`http://localhost:3001/api/${id}`, travel)
       console.log(res)
-      navigate('/wishlist')
      }
+     const handleChange = event => {
+      settravel({ ...travel, [event.target.id]: event.target.value });
+    };
 
-     const deleteDestination= async (event) => {
+     const handleDelete= async (event) => {
       event.preventDefault();
-      const res= await axios.delete(`http://localhost:3001/api/${id}`, formState)
+      const res= await axios.delete(`http://localhost:3001/api/${id}`, travel)
        console.log('Delete successful',res);
        navigate('/destinations')
       }
@@ -47,10 +57,23 @@ const DestinationsDetail = () => {
             <h3>Departure: {destinations.departure}</h3>
             <h3>Return Date: {destinations.returndate}</h3>
             <h3>Number of People: {destinations.people}</h3>
-            <button onClick={updatedestination}>Update</button>
-            <button onClick={deleteDestination}>Delete</button>
+            
+            <button onClick={handleDelete}>Delete</button>
           </div>
-          
+          <div className='form'>
+          <form onSubmit={handleUpdate}>
+       
+    <input type="text" id="city" onChange={handleChange} value={ travel.city } placeholder='City' />
+    <input id="country" type="text" onChange={handleChange} value={ travel.country } placeholder='Country'/>
+    <input id="image" type="text" onChange={handleChange} value={ travel.image } placeholder='Image'/>
+    <input id="departure" type="date" onChange={handleChange} value={ travel.departure } placeholder='departure'/>
+    <input id="returndate" type="date" onChange={handleChange} value={ travel.returndate } placeholder='Return date'/>
+    <input id="people" type= "number" onChange={handleChange} value={ travel.people } placeholder='Number of poeple'/>
+    <button type='submit'>Update</button>
+
+      
+    </form>
+          </div>
           
         </div>
       </div>

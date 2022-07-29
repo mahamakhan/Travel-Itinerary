@@ -8,9 +8,9 @@ const Navbar= ()=> {
 <nav className='navbar'>
         <div>
         
-        <Link to="/">Home</Link>
-        <Link to="/destinations">Destinations</Link>  
-        <Link to="/wishlist">Wishlist</Link> 
+        <Link to="/">   Home    </Link>
+        <Link to="/destinations">  Destinations    </Link>  
+        <Link to="/wishlist">   Wishlist</Link> 
         </div>
     </nav>
     )
