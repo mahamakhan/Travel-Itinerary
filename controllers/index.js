@@ -43,7 +43,6 @@ const { Wishlist, Destinations } = require('../models');
     const { id } = req.params;
     const { city, country,departure,returndate,people,images, wishlist_id} = req.body;
     
-    // if (!ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
     const updatedPost = { city, country,departure,returndate,people,images, wishlist_id:id };
 
@@ -55,13 +54,32 @@ const { Wishlist, Destinations } = require('../models');
  const deletePost = async (req, res) => {
     const { id } = req.params;
 
-    // if (!ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
-
     await Destinations.findByIdAndRemove(id);
 
     res.json({ message: "Post deleted successfully." });
 }
 
+const getWishlists = async (req, res) => {
+    try {
+      const wishlists = await Wishlist.find({})
+      return res.status(200).json(wishlists)
+    } catch (error) {
+      return res.status(500).send(error.message)
+    }
+    console.log(getWishlists+ 'func')
+  }
+
+//   const getWishlist = async (req, res) => { 
+//     const { id } = req.params;
+
+//     try {
+//         const wishlist = await Wishlist.findById(id);
+        
+//         res.status(200).json(wishlist);
+//     } catch (error) {
+//         res.status(404).json({ message: error.message });
+//     }
+// }
 
 
 module.exports = {
@@ -69,6 +87,8 @@ module.exports = {
   getPost,
   createPost,
   updatePost,
-  deletePost
+  deletePost,
+  getWishlists
+//   getWishlist
 
 }
