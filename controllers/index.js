@@ -44,7 +44,7 @@ const { Wishlist, Destinations } = require('../models');
     const { city, country,departure,returndate,people,images, wishlist_id} = req.body;
     
 
-    const updatedPost = { city, country,departure,returndate,people,images, wishlist_id:id };
+    const updatedPost = { city, country,departure,returndate,people,images, wishlist_id };
 
     await Destinations.findByIdAndUpdate(id, updatedPost, { new: true });
 
@@ -60,27 +60,46 @@ const { Wishlist, Destinations } = require('../models');
 }
 
 const getWishlists = async (req, res) => {
-    try {
-      const wishlists = await Wishlist.find({})
-      return res.status(200).json(wishlists)
-    } catch (error) {
-      return res.status(500).send(error.message)
-    }
-    console.log(getWishlists+ 'func')
+   
+    const wishlists = await Wishlist.find({})
+     res.json(wishlists)
+  
   }
 
-//   const getWishlist = async (req, res) => { 
-//     const { id } = req.params;
+  const getWishlist = async (req, res) => { 
+    const { id } = req.params;
 
-//     try {
-//         const wishlist = await Wishlist.findById(id);
+    try {
+        const wishlist = await Wishlist.findById(id);
         
-//         res.status(200).json(wishlist);
-//     } catch (error) {
-//         res.status(404).json({ message: error.message });
-//     }
-// }
+        res.status(200).json(wishlist);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
 
+const createWishlist = async (req, res) => {
+    const { name} = req.body;
+
+    const newWishlist = new Wishlist({  name })
+
+    try {
+        await newWishlist.save();
+
+        res.status(201).json(newWishlist );
+    } catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}
+
+
+const deleteWishlist = async (req, res) => {
+    
+      const { id } = req.params
+      await Wishlist.findByIdAndDelete(id)
+      res.json({message: "deleted"})
+   
+  }
 
 module.exports = {
   getPosts,
@@ -88,7 +107,9 @@ module.exports = {
   createPost,
   updatePost,
   deletePost,
-  getWishlists
-//   getWishlist
+  getWishlists,
+  getWishlist,
+  createWishlist,
+  deleteWishlist
 
 }

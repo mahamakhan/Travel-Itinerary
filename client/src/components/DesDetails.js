@@ -18,6 +18,8 @@ const DestinationsDetail = () => {
       returndate:''
     }
 
+
+
     const [travel, settravel] = useState(initialState)
     
     //get one based to its id
@@ -30,6 +32,9 @@ const DestinationsDetail = () => {
         }
         selectedDestination()
     }, [])
+
+
+ 
 
 
     //update function

@@ -7,7 +7,7 @@ const wishlist = async () => {
   const wishlists = [
     {
         name:'Work' ,
-       
+       city: 'Chicago'
         
       
        
@@ -15,7 +15,7 @@ const wishlist = async () => {
     },
     {
         name: 'Leisure',
-  
+      city: 'Hunza'
         
     }
   ]
