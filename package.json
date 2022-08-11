@@ -1,13 +1,4 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "Pick and add places to visit",
-  "main": "server.js",
-
-  
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
@@ -15,21 +6,27 @@
     "mongoose": "^6.4.7",
     "morgan": "^1.10.0"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.19"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js",
     "build": "cd client && rm -rf build && npm install && npm run build"
   },
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Pick and add places to visit",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mahamakhan/Travel-Itinerary.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/mahamakhan/Travel-Itinerary/issues"
   },
-  "homepage": "https://github.com/mahamakhan/Travel-Itinerary#readme"
+  "homepage": "https://github.com/mahamakhan/Travel-Itinerary#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
