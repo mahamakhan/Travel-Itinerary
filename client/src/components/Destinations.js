@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 // all destinations
 
 
-const BASE_URL = 'http://localhost:3001/api'
+const BASE_URL = 'http://localhost:3001/api/des'
 const Destinations= (props)=> {
 
  

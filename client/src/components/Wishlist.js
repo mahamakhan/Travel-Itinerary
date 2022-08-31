@@ -20,7 +20,7 @@ const Wishlist = ()=> {
     //submit form
       const handleSubmit = async (event) => {
         event.preventDefault();
-        const res = await axios.post('http://localhost:3001/api/wishlist', formState)
+        const res = await axios.post('http://localhost:3001/api/des/wishlist', formState)
         console.log('clicked', res)
         setFormState(initialState)
         navigate('/destinations')

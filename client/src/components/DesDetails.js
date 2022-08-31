@@ -25,7 +25,7 @@ const DestinationsDetail = () => {
     //get one based to its id
     useEffect(() => {
        let selectedDestination=  async () => {
-            const res = await axios.get(`http://localhost:3001/api/${id}`)
+            const res = await axios.get(`http://localhost:3001/api/des/${id}`)
             setDestinationsDetails(res.data)
             console.log(res)
             
@@ -40,7 +40,7 @@ const DestinationsDetail = () => {
     //update function
     const handleUpdate = async (event) => {
       event.preventDefault()
-      const res =await axios.put(`http://localhost:3001/api/${id}`, travel)
+      const res =await axios.put(`http://localhost:3001/api/des/${id}`, travel)
       console.log(res)
      }
      const handleChange = event => {
@@ -51,7 +51,7 @@ const DestinationsDetail = () => {
     //delete function
      const handleDelete= async (event) => {
       event.preventDefault();
-      const res= await axios.delete(`http://localhost:3001/api/${id}`, travel)
+      const res= await axios.delete(`http://localhost:3001/api/des/${id}`, travel)
        console.log('Delete successful',res);
        navigate('/destinations')
       }

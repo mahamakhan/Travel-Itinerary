@@ -1,21 +1,13 @@
-const {Router}=require('express')
+const {Router}=require('express').Router();
 
-const postController= require('../controllers')
+const { request } = require('express');
+const WishlistRoutes= require('./wishlist')
+const DestinationRoutes= require('./destination');
+const router = require('./wishlist');
 
-const router = Router();
-
-router.get('/', postController.getPosts);
-router.post('/wishlist', postController.createPost);
-router.get('/wishlists', postController.getWishlists)
-
-router.get('/:id', postController.getPost);
-router.get('/wishlists/:id', postController.getWishlist)
-router.delete('/wishlists/:id', postController.deleteWishlist)
-
-router.post('/newwishlist', postController.createWishlist)
-router.put('/:id', postController.updatePost);
-router.delete('/:id', postController.deletePost);
-
+router.use('/wish', WishlistRoutes)
+router.use('/des', DestinationRoutes)
 
 
 module.exports=router;
+

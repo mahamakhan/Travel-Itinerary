@@ -17,7 +17,7 @@ const List = ()=> {
     const [wishlist, setWishlist] = useState([])
     useEffect(() => {
       const getwishlists = async () => {
-          let res = await axios.get(`http://localhost:3001/api/wishlists`)
+          let res = await axios.get(`http://localhost:3001/api/wish/wishlists`)
           setWishlist(res.data)
           
         }
@@ -28,7 +28,7 @@ const List = ()=> {
     //submit form
       const handleSubmit = async (event) => {
         event.preventDefault();
-        const res = await axios.post('http://localhost:3001/api/newwishlist', wishlist)
+        const res = await axios.post('http://localhost:3001/api/wish/newwishlist', wishlist)
         console.log('clicked', res)
         setFormState(initialState)
         
@@ -40,7 +40,7 @@ const List = ()=> {
       };
       const handleDelete= async (event) => {
         event.preventDefault();
-        const res= await axios.delete(`http://localhost:3001/api/wishlist/${id}`, wishlist)
+        const res= await axios.delete(`http://localhost:3001/api/wish/wishlists/${id}`, wishlist)
          console.log('Delete successful',res);
         
         }
